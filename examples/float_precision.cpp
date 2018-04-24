@@ -49,7 +49,7 @@ int main(int argc, char** argv)
     cout.precision(numeric_limits<float>::digits10);
     float c1 = 1.00000000f;
     float c2 = 0.00000001f;
-    float c3 {c1 + c2};
+    float c3 = c1 + c2;
     cout << "c1 = " << c1 << endl;
     cout << "c2 = " << c2 << endl;
     cout << "c3 = c1 + c2" << endl;
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
     cout.precision(numeric_limits<float>::digits10);
     double overfloat = numeric_limits<float>::max() + 1e38;
     float d1 = overfloat;  // implicit narrowing, bad!
-    float d2 = overfloat;  // narrowing with compiler warning, better
+    float d2 {overfloat};  // narrowing with compiler warning, better
     cout << "double d1 = " << overfloat << endl;
     cout << "double d2 = " << overfloat << endl;
     cout << "float d1 = " << d1 << endl;
