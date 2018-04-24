@@ -1,13 +1,23 @@
-bin=task03
-
 CXX=g++
 CXXFLAGS=-g -std=c++11 -Wall -pedantic
-src=$(wildcard *.cpp)
-obj=$(src:.cpp=.o)
+LDFLAGS=
 
-$(bin): $(obj)
-	$(CXX) -o $@ $^
+SRCS=$(wildcard *.cpp)
+PRGS=$(patsubst %.cpp,%,$(SRCS))
+SUFX=""
+BINS=$(patsubst %,%$(SUFX),$(PRGS))
+OBJS=$(patsubst %,%.o,$(PRGS))
 
-.PHONY: clean
+all: $(BINS)
+
+.SECONDEXPANSION:
+OBJ=$(patsubst %$(SUFX),%.o,$@)
+BIN=$(patsubst %$(SUFX),%,$@)
+
+%$(SUFX): $(OBJS)
+	$(CXX) $(OBJ) $(LDFLAGS) -o $(BIN)
+
 clean:
-	rm -f $(obj) $(bin)
+	$(RM) $(BINS)
+
+rebuild: clean all
