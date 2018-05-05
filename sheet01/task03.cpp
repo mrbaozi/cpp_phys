@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, const char **argv)
 {
-    cout << "Exponential\n" << endl;
+    cout << "Aufgabe 3: Exponentialfunktion\n" << endl;
 
     float x;
     if (argc < 2)
