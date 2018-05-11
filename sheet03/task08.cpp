@@ -43,7 +43,7 @@ int main(int argc, const char **argv)
 
     unsigned space {width(binom(rows, rows / 2)) + 1};
 
-    for (unsigned row = 0; row <= rows; ++row)
+    for (unsigned row = 0; row < rows; ++row)
     {
         cout << setw(space * (rows - row) / 2) << binom(row, 0);
         for (unsigned element = 1; element <= row; ++element)

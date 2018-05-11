@@ -31,6 +31,8 @@ int main(int argc, const char **argv)
 
     double eps {numeric_limits<double>::epsilon()};
 
+    cout << "p = " << p << endl;
+    cout << "q = " << q << endl;
     cout << "D = " << D << endl;
 
     if (D > eps)
