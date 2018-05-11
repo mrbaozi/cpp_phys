@@ -5,8 +5,12 @@ using namespace std;
 
 double pair_n(int n)
 {
-    if (n == 0) return 1.;
-    return (1. + static_cast<double>(n) / (2. * static_cast<double>(n) + 1.) * pair_n(n - 1));
+    double result {1};
+    for (int i = n; i >= 1; --i)
+    {
+        result = 1 + static_cast<double>(i) / (2. * static_cast<double>(i) + 1.) * result;
+    }
+    return result;
 }
 
 int main(int argc, const char **argv)
