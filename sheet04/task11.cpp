@@ -1,5 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
+#include <string>
+#include <vector>
+#include <cassert>
 
 using namespace std;
 
@@ -7,15 +11,22 @@ int main(int argc, const char **argv)
 {
     cout << "Aufgabe 11: Drei kreuz drei\n" << endl;
 
-    double x;
-    if (argc < 2)
+    assert(argc > 1);
+    string file_name {argv[1]};
+
+    ifstream file {file_name};
+    assert(file.is_open());
+
+    vector<double> mat;
+    double num {0};
+    while (file >> num)
     {
-        cout << "Input: ";
-        cin >> x;
+        mat.emplace_back(num);
     }
-    else
+
+    for (auto const& val: mat)
     {
-        x = atof(argv[1]);
+        cout << val << endl;
     }
 
     return 0;
