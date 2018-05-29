@@ -27,7 +27,7 @@ int main(int argc, const char **argv)
     vector<bool> players;
     for (int ii = 0; ii < n; ++ii)
     {
-        players.emplace_back(true);
+        players.push_back(true);
     }
 
     int idx = n - 1;

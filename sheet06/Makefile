@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-g -std=c++11 -Wall -pedantic
+CXXFLAGS=-g -std=c++11 -stdlib=libc++ -Wall -pedantic
 LDFLAGS=
 
 SRCS=$(wildcard *.cpp)

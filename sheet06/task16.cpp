@@ -38,8 +38,8 @@ int main(int argc, const char **argv)
         double yi {0};
         while (ifile >> xi >> yi)
         {
-            x.emplace_back(xi);
-            f.emplace_back(yi);
+            x.push_back(xi);
+            f.push_back(yi);
             cout << "f(" << xi << ") = " << yi << endl;
         }
     }
