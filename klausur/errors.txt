@@ -1,0 +1,11 @@
+g++ -g -std=c++11 -Wall -Werror -pedantic   -c -o ss12_a5.o ss12_a5.cpp
+ss12_a5.cpp: In function ‘int main()’:
+ss12_a5.cpp:11:24: error: ISO C++ forbids variable length array ‘Zahlen’ [-Werror=vla]
+     bool Zahlen[eingabe];
+                        ^
+ss12_a5.cpp:29:15: error: ISO C++ forbids variable length array ‘prim’ [-Werror=vla]
+     int prim[l];
+               ^
+cc1plus: all warnings being treated as errors
+<builtin>: recipe for target 'ss12_a5.o' failed
+make: *** [ss12_a5.o] Error 1
