@@ -41,7 +41,7 @@ int main(){
 
     Zahlen[0] = false;
     Zahlen[1] = false;
-    Zahlen[2] = false;
+    Zahlen[2] = true;
 
     for (int n = 3; n < eingabe; n++)
     {
